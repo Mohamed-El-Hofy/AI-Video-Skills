@@ -1,0 +1,11 @@
+{
+  "name": "ai-video-skills",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22" },
+  "bin": { "aiv": "cli/aiv.mjs" },
+  "scripts": { "test": "node --test", "doctor": "node cli/aiv.mjs doctor", "smoke": "node scripts/smoke.mjs", "check": "node scripts/check-skills.mjs" },
+  "files": ["cli", "engine", "skills", "scripts", "schemas", "examples", "templates", "docs", "README.md", "README.ar.md", "LICENSE", "NOTICE", "THIRD_PARTY.md", "AGENTS.md", "CLAUDE.md", "GEMINI.md"]
+}

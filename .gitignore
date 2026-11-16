@@ -1,0 +1,14 @@
+node_modules/
+work/
+outputs/
+.test-*/
+.aiv-output/
+.aiv-request-*/
+*.local.json
+**/.runtime.json
+.env
+.env.*
+__pycache__/
+*.pyc
+*.partial.mp4
+render.lock

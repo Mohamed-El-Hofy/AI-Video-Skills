@@ -1,0 +1,8 @@
+{
+  "ffmpeg": "ffmpeg",
+  "ffprobe": "ffprobe",
+  "images": {"kind":"a1111","url":"http://127.0.0.1:7860"},
+  "voicetut": {"url":"http://127.0.0.1:7425","tokenEnv":"AIV_VOICETUT_TOKEN"},
+  "whisper": {"python":"SET_EXISTING_VENV_PYTHON","modelPath":"SET_EXISTING_LOCAL_MODEL_DIRECTORY","device":"cpu","computeType":"int8"},
+  "remotion": {"moduleRoot":"SET_EXISTING_NODE_PROJECT_WITH_REMOTION","browserExecutable":"SET_EXISTING_CHROME_EXECUTABLE","concurrency":1}
+}

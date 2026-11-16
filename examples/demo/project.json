@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "portable-demo",
+  "title": "Portable demo cards — replace with real assets",
+  "language": "ar-EG",
+  "width": 640,
+  "height": 360,
+  "fps": 24,
+  "captionMode": "burn",
+  "scenes": [
+    {"id":"intro","duration":2,"color":"#16455f","camera":"static","transition":"fade","narration":""},
+    {"id":"outro","duration":2,"color":"#305342","camera":"static","transition":"cut","narration":""}
+  ],
+  "subtitles": [
+    {"start":0.25,"end":1.75,"text":"تجربة المحرك المحمول"},
+    {"start":2.25,"end":3.75,"text":"بطاقات اختبار — ليست صورًا مولدة"}
+  ],
+  "provenance": []
+}
