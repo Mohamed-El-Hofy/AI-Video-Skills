@@ -62,3 +62,7 @@ English and Arabic READMEs were redesigned with three example briefs and expecte
 
 ## Public GitHub publication — 2026-11-16
 The user explicitly changed the visibility decision to Public, created the empty upstream and supplied https://github.com/Mohamed-El-Hofy/AI-Video-Skills. This upload is authorized; do not revert it to private. Local publication preflight inspected all 74 tracked files and both existing commits for excluded private artifacts and selected credential patterns, with no matches. This is a bounded scan, not a universal secret guarantee. Only tracked project files are uploaded; local provider configs, models and working media remain excluded. Record the actual remote verification and CI result separately; prior statements about no remote describe the pre-publication state.
+
+
+## macOS CI diagnosis and correction — 2026-11-16
+Initial public CI run 43807884164 passed Windows/Linux Node22/24 but both macOS jobs failed smoke with `No such filter: subtitles`; unit tests already passed there. Cause: Homebrew standard ffmpeg lacked libass/subtitles. Fix selects official ffmpeg-full and its keg-only bin in GitHub Actions PATH, adds a CI capability gate and early caption requirement error, and corrects the approved macOS setup plan. Added regression checks for formula/PATH guidance and burnt-vs-sidecar behavior. No local dependency was installed. Re-run and record actual final matrix outcome; do not infer success before jobs finish.

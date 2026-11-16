@@ -38,9 +38,9 @@ export async function doctor({probe,platform=process.platform,config={},ffmpeg,f
 }
 export function installationPlan(tool,platform=process.platform){
  if(tool!=='ffmpeg')throw new Error('Automatic setup supports FFmpeg only; use reviewed isolated provider setup instructions for other tools');
- const options={win32:['winget',['install','--id','Gyan.FFmpeg','--exact']],darwin:['brew',['install','ffmpeg']],linux:['sudo',['apt-get','install','ffmpeg']]};
+ const options={win32:['winget',['install','--id','Gyan.FFmpeg','--exact']],darwin:['brew',['install','ffmpeg-full']],linux:['sudo',['apt-get','install','ffmpeg']]};
  const chosen=options[platform];if(!chosen)throw new Error('Unsupported OS; install FFmpeg manually');
- const plan={tool,platform,command:[chosen[0],...chosen[1]],scope:'system package manager; may need administrator access',source:'OS package manager',note:platform==='linux'?'Debian/Ubuntu only; other distributions require manual setup':'Review package manager and package license before approval'};
+ const plan={tool,platform,command:[chosen[0],...chosen[1]],scope:'system package manager; may need administrator access',source:'OS package manager',note:platform==='linux'?'Debian/Ubuntu only; other distributions require manual setup':platform==='darwin'?'ffmpeg-full includes libass and is keg-only; add its bin directory to PATH or configure explicit ffmpeg/ffprobe paths after approval':'Review package manager and package license before approval'};
  return {...plan,id:digest(JSON.stringify(plan))};
 }
 export async function executeInstallation(plan,{approve=async()=>false,run:execute=run}={}){
@@ -48,4 +48,8 @@ export async function executeInstallation(plan,{approve=async()=>false,run:execu
  if(JSON.stringify(plan)!==JSON.stringify(expected))throw new Error('Installation plan modified');
  if(!await approve(plan))return {status:'DECLINED',executed:false};
  await execute(plan.command[0],plan.command.slice(1),{timeout:600000});return {status:'INSTALLED',executed:true,recheckRequired:true};
+}
+
+export function assertCaptionSupport(project,tool={}){
+ if(project.captionMode==='burn'&&(project.subtitles??[]).length&&!tool.subtitles)throw new Error('Burned captions require the FFmpeg subtitles filter (libass). On macOS use ffmpeg-full and select its bin via PATH or configured ffmpeg/ffprobe paths. No dependencies were installed.');
 }

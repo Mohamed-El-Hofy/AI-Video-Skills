@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ENGINE_VERSION, validateProject, readJson, atomicJson, assetPath, within, digest, fileDigest, run } from './core.mjs';
 import { srt, ass } from './captions.mjs';
+import { probeTool, assertCaptionSupport } from './doctor.mjs';
 import { renderRemotion, providerFingerprint } from './adapters/index.mjs';
 
 export async function inspectVideo(file,expected={},ffprobe='ffprobe'){
@@ -44,6 +45,7 @@ async function renderScene(scene,p,root,file,ffmpeg){
 export async function render(projectFile,{out,ffmpeg='ffmpeg',ffprobe='ffprobe',renderer='ffmpeg',providerConfig={},onProgress=()=>{}}={}){
  projectFile=fs.realpathSync(projectFile);const root=path.dirname(projectFile),p=readJson(projectFile),timeline=validateProject(p,{root,requireAssets:true});
  if(!['ffmpeg','remotion'].includes(renderer))throw new Error('Unsupported renderer');
+ if(p.captionMode==='burn'&&(p.subtitles??[]).length)assertCaptionSupport(p,await probeTool('ffmpeg',{ffmpeg,ffprobe}));
  for(const scene of p.scenes)if(scene.audio){const meta=JSON.parse((await run(ffprobe,['-v','error','-show_entries','format=duration','-of','json',assetPath(root,scene.audio)])).stdout);if(Number(meta.format?.duration)>scene.duration+.05)throw new Error(`Scene ${scene.id} narration audio exceeds duration; adjust timing explicitly`);}
  out=outputDirectory(out??path.join(root,'.aiv-output'),projectFile);
  for(const s of p.scenes)for(const k of ['image','audio'])if(s[k]&&within(out,assetPath(root,s[k])))throw new Error('Input assets cannot live in output directory');

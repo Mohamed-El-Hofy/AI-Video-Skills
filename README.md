@@ -107,7 +107,7 @@ The included color-card demo intentionally has no narration. For motion, caption
 | `DEGRADED` | Optional capabilities are unavailable/unverified | Continue with supplied assets where appropriate |
 | `BLOCKED` | A core requirement is missing/incompatible | Review and approve the necessary setup |
 
-If FFmpeg is missing, `node cli/aiv.mjs setup ffmpeg` shows the exact package-manager operation and asks you to type `INSTALL`. Noninteractive execution declines. Plans cover winget on Windows, Homebrew on macOS and apt on Debian/Ubuntu; other distributions need reviewed manual setup. Models and browsers always need separate approval.
+If FFmpeg is missing, `node cli/aiv.mjs setup ffmpeg` shows the exact package-manager operation and asks you to type `INSTALL`. Noninteractive execution declines. Plans cover winget on Windows, Homebrew ffmpeg-full on macOS and apt on Debian/Ubuntu; other distributions need reviewed manual setup. Models and browsers always need separate approval.
 
 ## Use with your agent
 
