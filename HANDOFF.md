@@ -58,3 +58,7 @@ For interrupted production, retain its output directory and verified checkpoints
 
 ## README refresh — 2026-11-16
 English and Arabic READMEs were redesigned with three example briefs and expected deliveries, an actual synthetic smoke-test screenshot, workflow diagram, CLI walkthrough, output tree, integration matrix, verification boundaries and license at the end. Screenshot is an original deterministic test fixture, not source-studio imagery. Documentation-only change; no engine, provider configuration or source-studio files changed. Relative links, image references and Markdown fences were checked; existing runtime verification remains recorded separately. Release archive updated locally; no GitHub publication.
+
+
+## Public GitHub publication — 2026-11-16
+The user explicitly changed the visibility decision to Public, created the empty upstream and supplied https://github.com/Mohamed-El-Hofy/AI-Video-Skills. This upload is authorized; do not revert it to private. Local publication preflight inspected all 74 tracked files and both existing commits for excluded private artifacts and selected credential patterns, with no matches. This is a bounded scan, not a universal secret guarantee. Only tracked project files are uploaded; local provider configs, models and working media remain excluded. Record the actual remote verification and CI result separately; prior statements about no remote describe the pre-publication state.

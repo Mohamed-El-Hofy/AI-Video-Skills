@@ -242,7 +242,7 @@ Review actual captions, motion and sound before delivery. Mock protocol tests an
 
 ## Release and publishing
 
-The project is prepared for a local `v0.1.0` release. No GitHub remote or publishing workflow is configured. Online publication needs explicit approval; packaging a local export does not grant it. [Release checklist →](docs/RELEASE_CHECKLIST.md)
+The source is available in the public [AI-Video-Skills repository](https://github.com/Mohamed-El-Hofy/AI-Video-Skills). Version `0.1.0` is the initial implementation; verification limits remain listed above. GitHub Actions checks run on pushes and pull requests; no automatic package/release publishing is configured. Future releases and external uploads require explicit authorization. [Release checklist →](docs/RELEASE_CHECKLIST.md)
 
 ## License
 

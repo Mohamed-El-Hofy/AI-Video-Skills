@@ -6,6 +6,6 @@
 - [ ] Review complete source video with listening and temporal playback; run representative long-form benchmark.
 - [ ] Confirm no credentials, local runtime locators, private configs/models or unauthorized source media in archive.
 - [ ] Review LICENSE/NOTICE/THIRD_PARTY against the exact files distributed.
-- [ ] Obtain explicit user approval before creating/pushing a remote GitHub repository or publishing a release.
+- [x] User explicitly approved public source upload to the user-created Mohamed-El-Hofy/AI-Video-Skills repository on 2026-11-16. Future release/package publishing needs its own authorization.
 
 Local Git initialization and a local archive are not publication. Keep package.json private=true to prevent accidental npm publication. No remote URL or auto-publishing workflow is configured.

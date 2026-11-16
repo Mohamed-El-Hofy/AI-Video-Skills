@@ -43,10 +43,14 @@ Independently probed 30.000s, 1080x1920/30 FPS H.264/AAC, 20,706,020 bytes. Full
 - Live VoiceTuT synthesis/listening, model-backed image generation, real Whisper inference/model loading, native Concat import.
 - Complete subjective listening, pronunciation, word-level sync and temporal-motion review of uploaded source video.
 - Real 5–20-minute AI documentary benchmark, high-resolution long-form performance guarantee or quality guarantee.
-- Dependency/model/browser installation, paid service use, remote repository creation, pushing or publication.
+- Dependency/model/browser installation or paid service use during the local implementation. The later public GitHub upload was explicitly authorized by the user; see the publication note below.
 
 ## Delivery
 
 The independent repository was copied to `D:/AI-Video-Skills` and initialized as a separate local Git repository. Tests were re-executed from that destination: 35 passed, 0 failed, 0 skipped; all nine skill checks and the synthetic motion/audio/caption smoke also passed there. No GitHub remote was configured.
 
 The source-only archive excludes local configs, tokens, runtime locators, private source media, node_modules, generated work and models. Local archive integrity is verified as part of delivery. See HANDOFF.md for continuation; remote release remains subject to explicit approval.
+
+
+## Subsequent authorized public upload
+On 2026-11-16 the user explicitly approved Public visibility and supplied the user-created empty repository https://github.com/Mohamed-El-Hofy/AI-Video-Skills. The intended upstream is origin/main. The pre-upload privacy/artifact check passed for all 74 tracked files and both prior local commits. Earlier no-remote statements describe the initial local-only delivery. Remote HEAD, file presence, visibility and CI results must be verified separately after pushing.
